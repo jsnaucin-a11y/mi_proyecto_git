@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de usuarios</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf0f6;
+            margin: 0;
+            padding: 30px 15px;
+        }
+
+        .contenedor {
+            background-color: white;
+            max-width: 400px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            color: #174a78;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 6px;
+            color: #333333;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: 2px solid #2474b5;
+            outline-offset: 2px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 12px;
+            background-color: #174a78;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #103653;
+        }
+
+        .descripcion {
+            color: #555555;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        #mensaje {
+            color: #176536;
+            text-align: center;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="contenedor">
+        <h2>Registro de usuarios</h2>
+
+        <form id="formulario">
+            <label for="nombre">Nombre completo</label>
+            <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                autocomplete="name"
+                required
+            >
+
+            <label for="correo">Correo electrónico</label>
+            <input
+                type="email"
+                id="correo"
+                name="correo"
+                autocomplete="email"
+                required
+            >
+
+            <label for="telefono">Teléfono</label>
+            <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                autocomplete="tel"
+                required
+            >
+
+            <label for="clave">Contraseña</label>
+            <input
+                type="password"
+                id="clave"
+                name="clave"
+                autocomplete="new-password"
+                minlength="6"
+                required
+            >
+
+            <button type="submit">Registrarse</button>
+        </form>
+
+        <p id="mensaje" role="status"></p>
+    </main>
+
+    <script>
+        const formulario = document.getElementById("formulario");
+        const mensaje = document.getElementById("mensaje");
+
+        formulario.addEventListener("submit", function (evento) {
+            evento.preventDefault();
+            mensaje.textContent =
+                "Validación completada. Este formulario es una demostración.";
+            formulario.reset();
+        });
+    </script>
+</body>
+</html>
